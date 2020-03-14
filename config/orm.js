@@ -14,7 +14,7 @@ function objToSql(ob) {
   let arr = [];
 
   for (let key in ob) {
-    var value = ob[key];
+    let value = ob[key];
 
     if (Object.hasOwnProperty.call(ob, key)) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
@@ -75,7 +75,7 @@ let orm = {
     });
   },
   delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
+    let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 
