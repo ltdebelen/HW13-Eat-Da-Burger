@@ -10,38 +10,37 @@
         <div class="row">
           <div class="one-third column value">
             <h4>Not Devoured</h4>
-            <input
-              class="u-full-width"
-              type="text"
-              readonly="true"
-              value="Chicken Burger"
-            />
-            <input
-              class="u-full-width"
-              type="text"
-              readonly="true"
-              value="Whopper"
-            />
+            {{#each burgers}}
+              {{#unless devoured}}
+                <input
+                  class="u-full-width"
+                  type="text"
+                  readonly="true"
+                  value="{{burger_name}}"
+                />
+              {{/unless}}
+            {{/each}}
           </div>
           <div class="one-third column value">
             <h4><i class="fas fa-angle-double-right"></i></h4>
-            <button class="button-primary">Devour</button>
-            <button class="button-primary">Devour</button>
+              {{#each burgers}}
+                {{#unless devoured}}
+                    <button class="button-primary btn-devour" id="{{id}}">Devour</button>
+                {{/unless}}
+              {{/each}}
           </div>
           <div class="one-third column value">
             <h4>Devoured</h4>
-            <input
-              class="u-full-width"
-              type="text"
-              readonly="true"
-              value="Chicken Burger"
-            />
-            <input
-              class="u-full-width"
-              type="text"
-              readonly="true"
-              value="Whopper"
-            />
+            {{#each burgers}}
+              {{#if devoured}}
+                <input
+                  class="u-full-width"
+                  type="text"
+                  readonly="true"
+                  value="{{burger_name}}"
+                />
+              {{/if}}
+            {{/each}}
           </div>
         </div>
       </div>
