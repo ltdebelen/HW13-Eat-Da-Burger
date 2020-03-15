@@ -25,7 +25,7 @@
             <h4><i class="fas fa-angle-double-right"></i></h4>
               {{#each burgers}}
                 {{#unless devoured}}
-                    <button class="button-primary btn-devour" id="{{id}}">Devour</button>
+                    <button class="button-primary btn-devour" data-id="{{id}}" data-devour="true">Devour</button>
                 {{/unless}}
               {{/each}}
           </div>
